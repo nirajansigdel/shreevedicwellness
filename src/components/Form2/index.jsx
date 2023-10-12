@@ -1,9 +1,250 @@
+"use client";
+
 import React from "react";
 
 import Input from "../Input";
+import { useState } from "react";
+import { Listbox } from "@headlessui/react";
+
 import Button from "../Button";
+import Select from "../Select";
+
+const dropDownDataClass = {
+  // name: "Yoga Class",
+  options: [
+    {
+      label: "Yoga",
+      value: "Yoga",
+      id: 1,
+    },
+    {
+      label: "Meditation",
+      value: "Meditation",
+      id: 2,
+    },
+    {
+      label: "Wellness",
+      value: "Wellness",
+      id: 3,
+    },
+    {
+      label: "Learning",
+      value: "Learning",
+      id: 4,
+    },
+    {
+      label: "Events",
+      value: "Events",
+      id: 5,
+    },
+  ],
+};
+
+const yogaClass = {
+  // name: "Yoga Class type",
+  options: [
+    {
+      label: "Basic ",
+      value: "Basic ",
+    },
+    {
+      label: "Intermediate ",
+      value: "Intermediate ",
+    },
+    {
+      label: "Advance ",
+      value: "Advance ",
+    },
+    {
+      label: "Pregnancy  ",
+      value: "Pregnancy  ",
+    },
+    {
+      label: "Elderly / chair yoga ",
+      value: "Elderly / chair yoga ",
+    },
+    {
+      value: "Detox yoga",
+      label: "Detox yoga",
+    },
+    {
+      label: " Backpain",
+      value: " Backpain",
+    },
+    {
+      label: "Join pain",
+      value: "Join pain",
+    },
+  ],
+};
+
+const meditationClass = {
+  // name: "meditation Class type",
+  options: [
+    {
+      label: "Depression ",
+      value: "Depression ",
+    },
+    {
+      label: "Anxiety ",
+      value: "Anxiety ",
+    },
+    {
+      label: "Happiness  ",
+      value: "Happiness  ",
+    },
+    {
+      label: "Mental Detox ",
+      value: "Mental Detox  ",
+    },
+
+    {
+      label: "Breathing technique ",
+      value: "Breathing technique  ",
+    },
+    {
+      label: "Mudras ",
+      value: "Mudras ",
+    },
+    {
+      label: "Concentration",
+      value: "Concentration",
+    },
+  ],
+};
+
+//Wellness Counselling
+const wellnessClass = {
+  // name: "Wellness Counselling  type",
+  options: [
+    {
+      label: "Nutrition as per body type ",
+      value: "Nutrition as per body type  ",
+    },
+    {
+      label: "Weight management ",
+      value: "HWeight management  ",
+    },
+    {
+      label: "Diabetes  ",
+      value: "Diabetes   ",
+    },
+    {
+      label: "Thyroid  ",
+      value: "Thyroid  ",
+    },
+    {
+      label: "Blood pressure  ",
+      value: "Blood pressure ",
+    },
+    {
+      label: "Cholesterol",
+      value: "Cholesterol",
+    },
+    {
+      label: " Arthritis ",
+      value: "Arthritis ",
+    },
+    {
+      label: "Fatty liver ",
+      value: "Fatty liver ",
+    },
+    {
+      label: "Kidney problem ",
+      value: "Kidney problem",
+    },
+    {
+      label: "Prostate ",
+      value: "Prostate ",
+    },
+    {
+      label: "Any other problems ",
+      value: "Any other problems ",
+    },
+  ],
+};
+
+//Learning type
+
+const learningClass = {
+  // name: "Learning Class type",
+  options: [
+    {
+      label: "Bhagvat Gita Class for kids  ",
+      value: "Bhagvat Gita Class for kids  ",
+    },
+    {
+      label: "Public Speaking ",
+      value: "Public Speaking ",
+    },
+    {
+      label: "Slokas Recitation ",
+      value: "Slokas Recitation ",
+    },
+    {
+      label: "Srimat Bhagavat mahapuran ",
+      value: "Srimat Bhagavat mahapuran ",
+    },
+    {
+      label: "Book Club ",
+      value: "Book Club ",
+    },
+  ],
+};
+
+//Events type
+
+const eventsClass = {
+  // name: "Events Class type",
+  options: [
+    {
+      label: "kids online Book club ",
+      value: "kids online Book club",
+    },
+    {
+      label: "Adult online book club",
+      value: "Adult online book club",
+    },
+    {
+      label: "Elderly Online Book Club  ",
+      value: "Elderly Online Book Club  ",
+    },
+    {
+      label: "Kids  online slokas recitation  ",
+      value: "Kids  online slokas recitation  ",
+    },
+    {
+      label: "Kids online Gita Reading",
+      value: "Kids online Gita Reading",
+    },
+  ],
+};
 
 function Form2({ setStep }) {
+  const [selectedPerson, setSelectedPerson] = useState(1);
+
+  const switchClass = () => {
+    switch (selectedPerson) {
+      case 1:
+        return yogaClass;
+      case 2:
+        return meditationClass;
+      case 3:
+        return wellnessClass;
+      case 4:
+        return learningClass;
+      case 5:
+        return eventsClass;
+      default:
+        return yogaClass;
+    }
+  };
+
+  function handleValueChange(newValue) {
+    console.log({ newValue });
+    setSelectedPerson({ label: newValue, value: newValue });
+  }
+
   return (
     <div className=" flex flex-col">
       <p className="mb-6 text-[#4B5563] font-bold text-[36px]">
@@ -16,8 +257,11 @@ function Form2({ setStep }) {
       </p>
 
       <div className="flex flex-col gap-3">
-        <Input type="text" placeholder="Class" />
-        <Input type="text" placeholder="Class Type" />
+        <Select
+          dropDownDataClass={dropDownDataClass}
+          onChange={setSelectedPerson}
+        />
+        <Select dropDownDataClass={switchClass()} />
         <Input type="text" placeholder="Session Time" />
       </div>
 
