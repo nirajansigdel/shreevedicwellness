@@ -5,7 +5,7 @@ import React from "react";
 import Input from "../Input";
 import Button from "../Button";
 
-function Form1() {
+function Form1({ setStep }) {
   return (
     <div>
       <p className="text-[#4B5563] font-bold text-[36px]">
@@ -26,7 +26,7 @@ function Form1() {
         <Input type="text" placeholder="Country" />
       </div>
 
-      <Button>Continue</Button>
+      <Button onClick={() => setStep(2)}>Continue</Button>
     </div>
   );
 }
