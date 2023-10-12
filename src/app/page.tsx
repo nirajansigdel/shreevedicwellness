@@ -8,8 +8,12 @@ export default function Home() {
   const [step, setStep] = useState(1);
 
   return (
-    <main className="flex  min-h-screen flex-col items-center justify-between p-24">
-      <div className=" max-w-[475px] h-full m-auto">
+    <main className="flex relative min-h-screen flex-col items-center justify-between p-24">
+      {/* <div
+        className="absolute top-0 left-0 w-full h-full bg-cover"
+        style={{ backgroundImage: 'url("/bg.png")' }}
+      ></div> */}
+      <div className="z-10 max-w-[475px] h-full m-auto">
         {step == 1 && <Form1 setStep={setStep} />}
         {step == 2 && <Form2 setStep={setStep} />}
       </div>

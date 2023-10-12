@@ -261,7 +261,10 @@ function Form2({ setStep }) {
           dropDownDataClass={dropDownDataClass}
           onChange={setSelectedPerson}
         />
-        <Select dropDownDataClass={switchClass()} />
+        <Select
+          dropDownDataClass={switchClass()}
+          onChange={setSelectedPerson}
+        />
         <Input type="text" placeholder="Session Time" />
       </div>
 
