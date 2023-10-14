@@ -6,7 +6,7 @@ import Logo from "./logo.png";
 
 function Index() {
   return (
-    <div className="w-full bg-[#7E8446] h-[200px] flex items-center justify-center">
+    <div className="w-full bg-[#7E8446] min-h-[120px] flex items-center justify-center">
       <div className="flex items-center gap-10">
         <Link href={"/registration"}>
           <span className="text-white">Yoga</span>

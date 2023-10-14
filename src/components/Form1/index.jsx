@@ -4,8 +4,11 @@ import React from "react";
 
 import Input from "../Input";
 import Button from "../Button";
+import { useRouter } from "next/navigation";
 
 function Form1({ setStep }) {
+  const router = useRouter();
+
   return (
     <div>
       <p className="text-[#4B5563] font-bold text-[36px]">
@@ -26,7 +29,12 @@ function Form1({ setStep }) {
         <Input type="text" placeholder="Country" />
       </div>
 
-      <Button onClick={() => setStep(2)}>Continue</Button>
+      <div className="flex gap-3 flex-col">
+        <Button onClick={() => setStep(2)}>Continue</Button>
+        <Button type="secondary" onClick={() => router.push("/")}>
+          Back to Home
+        </Button>
+      </div>
     </div>
   );
 }
