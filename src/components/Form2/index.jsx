@@ -269,7 +269,7 @@ function Form2({ setStep }) {
       </div>
 
       <div className="flex flex-col gap-3 mt-3">
-        <Button>Continue</Button>
+        <Button onClick={() => setStep(3)}>Continue</Button>
         <Button type={"secondary"} onClick={() => setStep(1)}>
           Go Back
         </Button>
