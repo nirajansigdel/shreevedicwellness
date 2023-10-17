@@ -38,6 +38,13 @@ const data = [
   },
   {
     id: 5,
+    name: "Fitness",
+    description:
+      "In the stillness of the pose and the breath, we discover the infinite peace within.",
+    image: Pic4,
+  },
+  {
+    id: 6,
     name: "Learning",
     description:
       "In the stillness of the pose and the breath, we discuss the infinite peace within",
@@ -47,7 +54,7 @@ const data = [
 
 function Index() {
   return (
-    <div>
+    <div >
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Learn With Us
       </p>
