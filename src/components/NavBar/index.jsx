@@ -7,7 +7,7 @@ import Logo from "./logo.png";
 function Index() {
   return (
     <div className="w-full bg-white py-[22px] flex items-center justify-center">
-      <div className="flex w-11/12 gap-5 flex-row justify-between">
+      <div className="flex w-5/6 gap-5 flex-row justify-between">
         <p>
           <span className="text-[#4B5563] font-bold text-[24px]">SHREEVEDIC</span>
           <span className="text-[#22C55E] font-bold text-[24px]">WELLNESS</span>

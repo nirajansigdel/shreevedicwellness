@@ -63,9 +63,9 @@ function Index() {
         us.
       </p>
 
-      <div className="mt-10 flex flex-row gap-x-60 gap-y-10 flex-wrap justify-around">
+      <div className="mt-10  flex flex-row gap-y-10 flex-wrap justify-around">
         {data?.map((learn) => (
-          <div className="flex flex-col gap-2 items-center justify-center">
+          <div className="flex flex-col gap-2 items-center justify-center w-96">
             <Image src={learn.image} alt="image" />
             <p className="text-[#4B5563] font-medium text-[13px]">
               {learn.name}
