@@ -10,9 +10,9 @@ export default function Index() {
   const router = useRouter();
 
   return (
-    <div className=" bg-white h-full flex flex-row gap-[200px] px-10 py-20 ">
+    <div className=" bg-white h-full flex flex-row gap-[200px] md:px-10 py-10 md:py-20 items-center justify-center">
       <div className=" flex-1 flex  flex-col gap-10 ">
-        <p className="text-[42px] font-bold w-3/4">
+        <p className="text-5xl font-bold w-3/4">
           <span className="text-[#4B5563] ">Experience the best</span>
           <span className="text-[#22C55E]"> Workout Humanly </span>
           <span className="text-[#4B5563]">Possible</span>
@@ -25,7 +25,7 @@ export default function Index() {
           sanctuary for selfd-discovery and renewal.{" "}
         </p>
       </div>
-      <div className="relative flex-1 flex items-center">
+      <div className="hidden md:block relative flex-1 flex items-center">
         <Image src={Hero} alt="Hero image" className="w-full" />
       </div>
     </div>

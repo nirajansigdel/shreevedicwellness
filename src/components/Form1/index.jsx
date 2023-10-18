@@ -11,11 +11,11 @@ function Form1({ setStep }) {
 
   return (
     <div>
-      <p className="text-[#4B5563] font-bold text-[36px]">
+      <p className="text-[#4B5563] font-bold text-4xl">
         Hello! Welcome To YOGASTA 👋
       </p>
 
-      <p className="text-[#9CA3AF] font-medium text-[13px] mt-6">
+      <p className="text-[#9CA3AF] text-center md:text-left font-medium text-sm mt-6">
         Embrace Tranquility, Nurture Your Soul, and Begin Your Yoga Journey with
         Us. Unleash Inner Harmony and Radiate Well-being. Please provide us your
         email.

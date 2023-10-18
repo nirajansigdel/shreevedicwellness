@@ -120,7 +120,7 @@ function Index({ isOpen, setIsOpen, image }) {
           )}
         </div>
         {!isError && (
-          <div className="border-red w-3/4 w-full">
+          <div className="w-3/4 w-full">
             <Image
               width={600} // Set a reasonable max width
               height={1000} // Set a reasonable max height

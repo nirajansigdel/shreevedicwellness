@@ -1,7 +1,5 @@
 import React from "react";
-
 import Image from "next/image";
-
 import Image1 from "./img1.png";
 import Image2 from "./img2.png";
 import Image3 from "./img3.png";
@@ -55,26 +53,27 @@ function Index() {
         Most Popular Classes
       </p>
       <p className="text-[#9CA3AF] text-[13px] mt-3 mb-4 font-medium text-center">
-        Explore our most popular classes- where wellness meets wisdom. Join us
+        Explore our most popular classes - where wellness meets wisdom. Join us
         in the journey to holistic well-being
       </p>
 
-      <div className="mt-10 flex flex-row gap-x-19 gap-y-20  flex-wrap justify-around">
+      <div className="mt-10 flex flex-row flex-wrap justify-center gap-16 ">
         {data.map((popular) => (
-          <div className="relative rounded-md ">
-            <Image src={popular.image} alt="image" className="relative" />
-            <div className="bg-white rounded-md shadow-lg absolute gap-2 flex flex-col bottom-[-25px] w-[350px] mx-auto left-0 right-0 px-3 py-2">
-              <div className="flex flex-col">
+          <div key={popular.id} className="relative rounded-md ">
+            <Image src={popular.image} alt="image" className="rounded-md" />
+            <div className="bg-white rounded-md shadow-lg absolute w-full bottom-[-25px] py-2 text-center">
+              <div className="flex flex-col  items-start px-4">
                 <p className="text-[#4B5563] text-[11px] ">{popular.price}</p>
                 <p className="text-[#4B5563] text-[13px] font-medium">
                   {popular.name}
                 </p>
               </div>
-              <p className="text-[11px] font-medium flex justify-between">  
-                <span className="text-[#22C55E] ">Join Now</span>
-                <span>8 day</span>
-                
+              <div className=" flex justify-between px-4">
+                <p className="text-[11px] font-medium text-[#22C55E] mt-2">
+                  Join Now
                 </p>
+                <p className="text-[11px] font-medium mt-1">8 days</p>
+              </div>
             </div>
           </div>
         ))}

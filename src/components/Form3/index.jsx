@@ -10,17 +10,17 @@ function Form3({ setStep }) {
 
   return (
     <div>
-      <p className="text-[#4B5563] font-bold text-[36px]">Almost There 🏁</p>
+      <p className="text-[#4B5563] font-bold text-4xl">Almost There 🏁</p>
 
       <p className="text-[#9CA3AF] font-medium text-[13px] mt-6">
         Please complete your payment to proceed.
       </p>
 
-      <div>
+      {/* <div>
         <p className="text-[#4B5563] text-[16px] font-medium mb-6 mt-6">
           Payment Method
         </p>
-        <div className=" flex flex-row items-center gap-5">
+        <div className="flex flex-row items-center gap-3 flex-wrap justify-around">
           <button
             className={`rounded-md py-3 px-4 bg-[#E5E7EB] flex flex-row gap-3 items-center ${
               payment == 1 ? "bg-[#3B82F6]" : ""
@@ -112,7 +112,7 @@ function Form3({ setStep }) {
             </span>
           </button>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex flex-col gap-3 mt-8 mb-3">
         <Input type="text" placeholder="Card Number" />

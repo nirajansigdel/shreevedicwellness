@@ -6,16 +6,18 @@ import Logo from "./logo.png";
 
 function Index() {
   return (
-    <div className="w-full bg-white py-[22px] flex items-center justify-center">
-      <div className="flex  w-3/4 gap-5 flex flex-row justify-between">
-        <p>
-          <span className="text-[#4B5563] font-bold text-[24px]">
-            SHREEVEDIC
-          </span>
-          <span className="text-[#22C55E] font-bold text-[24px]">WELLNESS</span>
-        </p>
+    <div className="mx-auto  w-full md:w-3/4 bg-white py-[10px] md:py-[22px] flex items-center justify-center ">
+      <div className="py-6 md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
+        <Link href={"/"}>
+          <p className="text-center md:text-left">
+            <span className="text-[#4B5563] font-bold text-2xl">
+              SHREEVEDIC
+            </span>
+            <span className="text-[#22C55E] font-bold text-2xl">WELLNESS</span>
+          </p>
+        </Link>
 
-        <div className="flex items-center gap-10">
+        <div className="hidden md:flex flex flex-col md:flex-row items-center gap-4 md:gap-10">
           <Link href={"/"}>
             <span className="text-[#4B5563] font-medium">Home</span>
           </Link>
@@ -26,7 +28,7 @@ function Index() {
           <Link href={"/"}>
             <span className="text-[#4B5563] font-medium">Pricing</span>
           </Link>
-          <Link href={"/"}>
+          <Link href={"/registration"}>
             <span className="text-white rounded-md px-4 py-2 font-medium bg-[#22C55E]">
               Join Class
             </span>

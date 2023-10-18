@@ -16,7 +16,7 @@ function Index() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="my-20">
+    <div className="my-10 ">
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Gallery
       </p>
@@ -24,7 +24,7 @@ function Index() {
         Explore our Yoga Gallery. A Visual journey Through Serenity
       </p>
 
-      <div className="flex flex-row flex-wrap gap-10  justify-between px-20">
+      <div className="flex  flex-row flex-wrap gap-10  justify-between md:px-20">
         {arrayImages.map((image) => (
           <div
             onClick={() => {

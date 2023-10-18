@@ -247,7 +247,7 @@ function Form2({ setStep }) {
 
   return (
     <div className=" flex flex-col">
-      <p className="mb-6 text-[#4B5563] font-bold text-[36px]">
+      <p className="mb-6 text-[#4B5563] font-bold text-4xl">
         Class Registration 🧘‍♂️
       </p>
       <p className="mb-8 text-[#9CA3AF] font-medium text-[13px]">
