@@ -10,8 +10,8 @@ export default function Index() {
   const router = useRouter();
 
   return (
-    <div className=" bg-white h-full flex flex-row gap-[200px] px-10 py-20">
-      <div className=" flex-1 flex flex flex-col gap-10 ">
+    <div className=" bg-white h-full flex flex-row gap-[200px] px-10 py-20 ">
+      <div className=" flex-1 flex  flex-col gap-10 ">
         <p className="text-[42px] font-bold w-3/4">
           <span className="text-[#4B5563] ">Experience the best</span>
           <span className="text-[#22C55E]"> Workout Humanly </span>

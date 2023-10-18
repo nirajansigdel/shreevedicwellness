@@ -11,9 +11,9 @@ import Gallery from "./content/_gallery";
 
 function Content() {
   return (
-    <div className="flex bg-white flex-col h-screen  w-full">
+    <div className="flex bg-white flex-col h-screen  w-full  ">
       <NavBar />
-      <div className="w-4/5 mx-auto flex flex-col flex-1">
+      <div className=" w-5/6 mx-auto flex flex-col flex-1">
         <Hero />
         <Learn/>
         <Popular/>

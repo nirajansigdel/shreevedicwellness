@@ -9,8 +9,10 @@ function Index() {
     <div className="w-full bg-white py-[22px] flex items-center justify-center">
       <div className="flex  w-3/4 gap-5 flex flex-row justify-between">
         <p>
-          <span className="text-[#4B5563] font-bold text-[24px]">YOGAS</span>
-          <span className="text-[#22C55E] font-bold text-[24px]">TA</span>
+          <span className="text-[#4B5563] font-bold text-[24px]">
+            SHREEVEDIC
+          </span>
+          <span className="text-[#22C55E] font-bold text-[24px]">WELLNESS</span>
         </p>
 
         <div className="flex items-center gap-10">

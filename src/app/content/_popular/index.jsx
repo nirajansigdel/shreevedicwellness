@@ -59,7 +59,7 @@ function Index() {
         in the journey to holistic well-being
       </p>
 
-      <div className="mt-10 flex flex-row gap-x-20 gap-y-20  flex-wrap justify-around">
+      <div className="mt-10 flex flex-row gap-x-19 gap-y-20  flex-wrap justify-around">
         {data.map((popular) => (
           <div className="relative rounded-md ">
             <Image src={popular.image} alt="image" className="relative" />
@@ -70,7 +70,11 @@ function Index() {
                   {popular.name}
                 </p>
               </div>
-              <p className="text-[#22C55E] text-[11px] font-medium">Join Now</p>
+              <p className="text-[11px] font-medium flex justify-between">  
+                <span className="text-[#22C55E] ">Join Now</span>
+                <span>8 day</span>
+                
+                </p>
             </div>
           </div>
         ))}

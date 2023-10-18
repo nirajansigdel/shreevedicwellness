@@ -38,6 +38,13 @@ const data = [
   },
   {
     id: 5,
+    name: "Fitness",
+    description:
+      "In the stillness of the pose and the breath, we discover the infinite peace within.",
+    image: Pic4,
+  },
+  {
+    id: 6,
     name: "Learning",
     description:
       "In the stillness of the pose and the breath, we discuss the infinite peace within",
@@ -47,7 +54,7 @@ const data = [
 
 function Index() {
   return (
-    <div>
+    <div >
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Learn With Us
       </p>
@@ -56,9 +63,9 @@ function Index() {
         us.
       </p>
 
-      <div className="mt-10 flex flex-row gap-x-60 gap-y-10 flex-wrap justify-around">
+      <div className="mt-10  flex flex-row gap-y-10 flex-wrap justify-around">
         {data?.map((learn) => (
-          <div className="flex flex-col gap-2 items-center justify-center">
+          <div className="flex flex-col gap-2 items-center justify-center w-96">
             <Image src={learn.image} alt="image" />
             <p className="text-[#4B5563] font-medium text-[13px]">
               {learn.name}
