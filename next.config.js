@@ -5,6 +5,12 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+
+  images: {
+    formats: ["image/webp"],
+
+    domains: ["ca.slack-edge.com"],
+  },
 };
 
 module.exports = nextConfig;

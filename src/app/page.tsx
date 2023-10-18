@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Hero from "./content/_hero";
 import Learn from "./content/_learn";
 import Popular from "./content/_popular";
+import Gallery from "./content/_gallery";
 
 function Content() {
   return (
@@ -16,6 +17,7 @@ function Content() {
         <Hero />
         <Learn/>
         <Popular/>
+      <Gallery />
       </div>
       {/* <Footer /> */}
     </div>
