@@ -4,15 +4,23 @@ import React, { useState } from "react";
 
 import Input from "../Input";
 import Button from "../Button";
+import PayPalPayment from "@/components/PayPalPayment"
+import PayPalScriptProvider from "@/components/PayPalScriptProvider";
 
 function Form3({ setStep }) {
   const [payment, setPayment] = useState(null);
+
+  const payload = {
+    fullName: "Manoram Baudel", //TODO - Update accordingly
+    class: "Medidation", //TODO - Update accordingly
+    type: "Webinar", //TODO - Update accordingly
+  }
 
   return (
     <div className=" flex flex-col">
       <p className="text-[#4B5563] font-bold text-4xl">Almost There 🏁</p>
 
-      <p className="text-[#9CA3AF] font-medium text-[13px] mt-6">
+      <p className="text-[#9CA3AF] font-medium text-[13px] my-6">
         Please complete your payment to proceed. Fill the form to reserve your
         class
       </p>
@@ -115,17 +123,19 @@ function Form3({ setStep }) {
         </div>
       </div> */}
 
-      <div className="flex flex-col gap-3 mt-8 mb-3">
+      {/* <div className="flex flex-col gap-3 mt-8 mb-3">
         <Input type="text" placeholder="Card Number" />
 
         <Input type="password" placeholder="CVV" />
 
         <Input type="text" placeholder="Name on Card" />
         <Input type="text" placeholder="Expiry" />
-      </div>
+      </div> */}
+      <PayPalScriptProvider>
+        <PayPalPayment payload={payload} />
+      </PayPalScriptProvider>
 
       <div className="flex gap-3 flex-col">
-        <Button onClick={() => alert("confirmed")}>Confirm</Button>
         <Button type={"secondary"} onClick={() => setStep(2)}>
           Go Back
         </Button>
