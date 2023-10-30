@@ -63,7 +63,7 @@ function Index() {
         us.
       </p>
 
-      <div className="mt-10  grid grid-cols-3  justify-items-center gap-y-10">
+      <div className="mt-10  grid grid-cols-1 md:grid-cols-3  justify-items-center gap-y-10">
         {data?.map((learn) => (
           <div className="flex flex-col gap-2 items-center justify-center w-96">
             <Image src={learn.image} alt="image" />

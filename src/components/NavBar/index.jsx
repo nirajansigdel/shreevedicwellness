@@ -6,14 +6,26 @@ import Logo from "./logo.png";
 
 function Index() {
   return (
-    <div className="mx-auto  w-full md:w-3/4 bg-white py-[10px] md:py-[22px] flex items-center justify-center ">
-      <div className="py-6 md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
+    <div className="mx-auto w-full md:w-3/4 bg-white py-[10px] md:py-[22px] flex items-center justify-center ">
+      <div className="py-2 md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
         <Link href={"/"}>
-          <p className="text-center md:text-left">
-            <span className="text-[#4B5563] font-bold text-2xl">
-              SHREEVEDIC
-            </span>
-            <span className="text-[#22C55E] font-bold text-2xl">WELLNESS</span>
+          <p className="text-left px-3 flex items-center justify-between ">
+            <p className="">
+              <span className="text-[#4B5563] font-bold text-md md:text-2xl">
+                SHREEVEDIC
+              </span>
+              <span className="text-[#22C55E] font-bold text-md md:text-2xl">
+                WELLNESS
+              </span>
+            </p>
+
+            <p className="md:hidden ">
+              <Link href={"/registration"}>
+                <span className="text-white rounded-md px-4 py-1 font-medium bg-[#22C55E]">
+                  Join Class
+                </span>
+              </Link>
+            </p>
           </p>
         </Link>
 

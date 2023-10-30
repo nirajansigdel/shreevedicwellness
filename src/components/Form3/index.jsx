@@ -9,11 +9,12 @@ function Form3({ setStep }) {
   const [payment, setPayment] = useState(null);
 
   return (
-    <div>
+    <div className=" flex flex-col">
       <p className="text-[#4B5563] font-bold text-4xl">Almost There 🏁</p>
 
       <p className="text-[#9CA3AF] font-medium text-[13px] mt-6">
-        Please complete your payment to proceed.
+        Please complete your payment to proceed. Fill the form to reserve your
+        class
       </p>
 
       {/* <div>
