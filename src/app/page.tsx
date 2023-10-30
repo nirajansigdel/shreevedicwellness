@@ -19,7 +19,7 @@ function Content() {
         <Popular/>
       <Gallery />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
