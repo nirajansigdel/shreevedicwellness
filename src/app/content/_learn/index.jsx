@@ -55,7 +55,7 @@ const data = [
 function Index() {
   return (
     <div id="learn-with-us">
-      <p className="text-[#4B5563] text-[29px] font-medium text-center">
+      <p className="text-[#4B5563]  text-[29px] font-medium text-center">
         Learn With Us
       </p>
       <p className="text-[#9CA3AF] text-[13px] mt-3 mb-4 font-medium text-center">
@@ -65,7 +65,7 @@ function Index() {
 
       <div className="mt-10  grid grid-cols-1 md:grid-cols-3  justify-items-center gap-y-10">
         {data?.map((learn) => (
-          <div className="flex flex-col gap-2 items-center justify-center w-96">
+          <div className="flex  w-full flex-col gap-2 items-center justify-center w-96">
             <Image src={learn.image} alt="image" />
             <p className="text-[#4B5563] font-medium text-[13px]">
               {learn.name}

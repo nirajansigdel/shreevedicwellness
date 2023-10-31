@@ -57,10 +57,14 @@ function Index() {
         in the journey to holistic well-being
       </p>
 
-      <div className="mt-10 flex flex-row flex-wrap justify-center gap-16 ">
+      <div className="mt-10 w-full  grid grid-cols-1 w-5/6 mx-auto md:grid-cols-3 gap-16 ">
         {data.map((popular) => (
           <div key={popular.id} className="relative rounded-md ">
-            <Image src={popular.image} alt="image" className="rounded-md" />
+            <Image
+              src={popular.image}
+              alt="image"
+              className="rounded-md w-full"
+            />
             <div className="bg-white rounded-md shadow-lg absolute w-full bottom-[-25px] py-2 text-center">
               <div className="flex flex-col  items-start px-4">
                 <p className="text-[#4B5563] text-[11px] ">{popular.price}</p>

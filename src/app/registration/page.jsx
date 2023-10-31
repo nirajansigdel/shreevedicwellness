@@ -14,14 +14,14 @@ export default function Home() {
   return (
     <main className="flex relative min-h-screen flex-col gap-12 items-center justify-between p-8 md:p-24">
       <div className="z-10  max-w-[475px] h-full m-auto">
-        {step == 1 && (
+        {step == 1 && <Form2 setStep={setStep} setForm1Data={setForm1Data} />}
+        {step == 2 && (
           <Form1
             setStep={setStep}
             form1Data={form1Data}
             setForm1Data={setForm1Data}
           />
         )}
-        {step == 2 && <Form2 setStep={setStep} setForm1Data={setForm1Data} />}
         {step == 3 && <Form3 setStep={setStep} />}
       </div>
 

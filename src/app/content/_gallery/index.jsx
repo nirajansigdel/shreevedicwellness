@@ -24,7 +24,7 @@ function Index() {
         Explore our Yoga Gallery. A Visual journey Through Serenity
       </p>
 
-      <div className="flex  flex-row flex-wrap gap-10  justify-between md:px-20">
+      <div className="flex  w-full grid sm:grid-cols-1 md:grid-cols-3 gap-10   mx-auto w-full justify-between">
         {arrayImages.map((image) => (
           <div
             onClick={() => {
@@ -32,7 +32,7 @@ function Index() {
               setSelectedImage(image);
             }}
           >
-            <Image src={image} alt="image" />
+            <Image src={image} alt="image" className="w-full" />
           </div>
         ))}
       </div>
