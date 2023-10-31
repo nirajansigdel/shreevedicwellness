@@ -6,10 +6,10 @@ import Link from "next/link";
 
 function Index() {
   return (
-    <div className="pb-12">
-      <div className="mx-auto border p-10 rounded-md flex flex-col gap-4  w-full md:w-3/4 bg-white py-[10px] md:py-[22px] flex items-center justify-center  ">
+    <div className="mx-8 pb-12">
+      <div className="mx-auto border p-10 rounded-md flex flex-col gap-4  w-full md:w-4/5 bg-white py-[10px] md:py-[22px] flex items-center justify-center  ">
         <div className="py-6  md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
-          <div className="flex flex-col  gap-5">
+          <div className="flex   flex-col items-center md:items-start  gap-5">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -32,7 +32,7 @@ function Index() {
             </p>
           </div>
 
-          <div className=" flex items-center gap-4">
+          <div className=" flex items-center gap-4  flex-col md:flex-row">
             <Link href={"/registration"}>
               <span className="text-[#4B5563] font-medium">Join Class</span>
             </Link>
@@ -42,7 +42,7 @@ function Index() {
             <span className="text-[#4B5563] font-medium">Contact us</span>
           </div>
 
-          <div className="flex gap-5  items-center">
+          <div className="flex gap-5  justify-center md:justify-start items-center">
             <span>
               <svg
                 stroke="currentColor"
@@ -86,7 +86,7 @@ function Index() {
           </div>
         </div>
 
-        <div className=" flex justify-center items-end  w-full text-center text-sm">
+        <div className=" my-3 flex justify-center items-end  w-full text-center text-sm">
           ©Copyright 2023 Shreevedic
         </div>
       </div>

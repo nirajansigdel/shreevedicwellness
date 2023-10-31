@@ -6,7 +6,7 @@ import Logo from "./logo.png";
 
 function Index() {
   return (
-    <div className="mx-auto w-full md:w-3/4 bg-white py-[10px] md:py-[22px] flex items-center justify-center ">
+    <div className="mx-auto w-full md:w-4/5 bg-white py-[10px] md:py-[22px] flex items-center justify-center ">
       <div className="py-2 md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
         <Link href={"/"}>
           <p className="text-left px-3 flex items-center justify-between ">

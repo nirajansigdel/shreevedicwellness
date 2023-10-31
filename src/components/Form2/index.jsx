@@ -3,11 +3,12 @@
 import React from "react";
 
 import Input from "../Input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 
 import Button from "../Button";
 import Select from "../Select";
+import ReactSelect from "react-select";
 
 const dropDownDataClass = {
   // name: "Yoga Class",
@@ -222,6 +223,8 @@ const eventsClass = {
 
 function Form2({ setStep }) {
   const [selectedPerson, setSelectedPerson] = useState(1);
+  const [secondSelectedValue, setSecondSelectedValue] = useState(null);
+  const [secondOption, setSecondOption] = useState(null);
 
   const switchClass = () => {
     switch (selectedPerson) {
@@ -240,9 +243,15 @@ function Form2({ setStep }) {
     }
   };
 
+  useEffect(() => {
+    setSecondOption(switchClass().options[0]);
+    console.log(switchClass().options[0]);
+  }, [selectedPerson]);
+
   function handleValueChange(newValue) {
     console.log({ newValue });
     setSelectedPerson({ label: newValue, value: newValue });
+    setSelectedClass(null);
   }
 
   return (
@@ -260,10 +269,20 @@ function Form2({ setStep }) {
         <Select
           dropDownDataClass={dropDownDataClass}
           onChange={setSelectedPerson}
+          secondOption={secondOption}
         />
-        <Select
-          dropDownDataClass={switchClass()}
-          onChange={setSelectedPerson}
+        <ReactSelect
+          className="basic-single"
+          classNamePrefix="select"
+          value={secondOption}
+          defaultValue={secondOption}
+          isSearchable={true}
+          name="color"
+          onChange={(e) => {
+            console.log("222", e);
+            setSecondSelectedValue(e);
+          }}
+          options={switchClass().options}
         />
         <Input type="text" placeholder="Session Time" />
       </div>

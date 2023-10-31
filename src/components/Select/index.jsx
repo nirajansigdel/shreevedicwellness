@@ -1,16 +1,19 @@
 import React from "react";
 import ReactSelect from "react-select";
 
-function SelectComponent({ dropDownDataClass, onChange }) {
+function SelectComponent({ dropDownDataClass, onChange, secondOption }) {
+  console.log({ dropDownDataClass });
   return (
     <div>
       <ReactSelect
         className="basic-single"
         classNamePrefix="select"
-        defaultValue={dropDownDataClass.options[0]}
+        defaultValue={secondOption}
         isSearchable={true}
         name="color"
-        onChange={(e) => onChange(e.id)}
+        onChange={(e) => {
+          onChange(e.id);
+        }}
         options={dropDownDataClass.options}
       />
     </div>
