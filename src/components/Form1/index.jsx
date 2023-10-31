@@ -6,7 +6,7 @@ import Input from "../Input";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
 
-function Form1({ setStep }) {
+function Form1({ setStep, form1Data, setForm1Data }) {
   const router = useRouter();
 
   return (
@@ -22,11 +22,38 @@ function Form1({ setStep }) {
       </p>
 
       <div className="flex flex-col gap-3 mt-8 mb-3">
-        <Input type="text" placeholder="Full Name" />
+        <Input
+          type="text"
+          placeholder="Full Name"
+          onChange={(e) =>
+            setForm1Data({
+              ...form1Data,
+              firstName: e.target.value,
+            })
+          }
+        />
 
-        <Input type="text" placeholder="Email" />
+        <Input
+          type="text"
+          placeholder="Email"
+          onChange={(e) =>
+            setForm1Data({
+              ...form1Data,
+              email: e.target.value,
+            })
+          }
+        />
 
-        <Input type="text" placeholder="Country" />
+        <Input
+          type="text"
+          placeholder="Country"
+          onChange={(e) =>
+            setForm1Data({
+              ...form1Data,
+              country: e.target.value,
+            })
+          }
+        />
       </div>
 
       <div className="flex gap-3 flex-col">

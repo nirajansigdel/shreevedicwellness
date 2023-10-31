@@ -221,7 +221,7 @@ const eventsClass = {
   ],
 };
 
-function Form2({ setStep }) {
+function Form2({ setStep, setForm1Data }) {
   const [selectedPerson, setSelectedPerson] = useState(1);
   const [firsSelectedValue, setFirsSelectedValue] = useState(
     dropDownDataClass.options[0]
@@ -298,7 +298,13 @@ function Form2({ setStep }) {
 
       <div className="flex flex-col gap-3 mt-3">
         <Button onClick={() => setStep(3)}>Continue</Button>
-        <Button type={"secondary"} onClick={() => setStep(1)}>
+        <Button
+          type={"secondary"}
+          onClick={() => {
+            setStep(1);
+            setForm1Data({});
+          }}
+        >
           Go Back
         </Button>
       </div>

@@ -7,12 +7,21 @@ import { useState } from "react";
 
 export default function Home() {
   const [step, setStep] = useState(1);
+  const [form1Data, setForm1Data] = useState({});
+  const [form2Data, setForm2Data] = useState({});
 
+  console.log({ form1Data });
   return (
     <main className="flex relative min-h-screen flex-col gap-12 items-center justify-between p-8 md:p-24">
       <div className="z-10  max-w-[475px] h-full m-auto">
-        {step == 1 && <Form1 setStep={setStep} />}
-        {step == 2 && <Form2 setStep={setStep} />}
+        {step == 1 && (
+          <Form1
+            setStep={setStep}
+            form1Data={form1Data}
+            setForm1Data={setForm1Data}
+          />
+        )}
+        {step == 2 && <Form2 setStep={setStep} setForm1Data={setForm1Data} />}
         {step == 3 && <Form3 setStep={setStep} />}
       </div>
 
