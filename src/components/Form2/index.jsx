@@ -223,6 +223,9 @@ const eventsClass = {
 
 function Form2({ setStep }) {
   const [selectedPerson, setSelectedPerson] = useState(1);
+  const [firsSelectedValue, setFirsSelectedValue] = useState(
+    dropDownDataClass.options[0]
+  );
   const [secondSelectedValue, setSecondSelectedValue] = useState(null);
   const [secondOption, setSecondOption] = useState(null);
 
@@ -246,13 +249,12 @@ function Form2({ setStep }) {
   useEffect(() => {
     setSecondOption(switchClass().options[0]);
     console.log(switchClass().options[0]);
-  }, [selectedPerson]);
+  }, []);
 
-  function handleValueChange(newValue) {
-    console.log({ newValue });
-    setSelectedPerson({ label: newValue, value: newValue });
-    setSelectedClass(null);
-  }
+  useEffect(() => {
+    setSecondOption(switchClass().options[0]);
+    console.log(switchClass().options[0]);
+  }, [selectedPerson]);
 
   return (
     <div className=" flex flex-col">
@@ -266,16 +268,23 @@ function Form2({ setStep }) {
       </p>
 
       <div className="flex flex-col gap-3">
-        <Select
-          dropDownDataClass={dropDownDataClass}
-          onChange={setSelectedPerson}
-          secondOption={secondOption}
+        <ReactSelect
+          className="basic-single"
+          classNamePrefix="select"
+          isSearchable={true}
+          value={firsSelectedValue}
+          name="color"
+          onChange={(e) => {
+            setSelectedPerson(e.id);
+            setFirsSelectedValue(e);
+          }}
+          options={dropDownDataClass.options}
         />
         <ReactSelect
           className="basic-single"
           classNamePrefix="select"
-          value={secondOption}
           defaultValue={secondOption}
+          value={secondSelectedValue ?? switchClass().options[0]}
           isSearchable={true}
           name="color"
           onChange={(e) => {

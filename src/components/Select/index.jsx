@@ -8,6 +8,7 @@ function SelectComponent({ dropDownDataClass, onChange, secondOption }) {
       <ReactSelect
         className="basic-single"
         classNamePrefix="select"
+        // value={value}
         defaultValue={secondOption}
         isSearchable={true}
         name="color"
