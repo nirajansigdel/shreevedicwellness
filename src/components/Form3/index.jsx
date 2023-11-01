@@ -10,11 +10,7 @@ import PayPalScriptProvider from "@/components/PayPalScriptProvider";
 function Form3({ setStep }) {
   const [payment, setPayment] = useState(null);
 
-  const payload = {
-    fullName: "Manoram Baudel", //TODO - Update accordingly
-    class: "Medidation", //TODO - Update accordingly
-    type: "Webinar", //TODO - Update accordingly
-  }
+  const order_id = "654241c0ec9b24fdfc34bc8f" // ID referencing the object stored in database after submitting the form
 
   return (
     <div className=" flex flex-col">
@@ -132,7 +128,7 @@ function Form3({ setStep }) {
         <Input type="text" placeholder="Expiry" />
       </div> */}
       <PayPalScriptProvider>
-        <PayPalPayment payload={payload} />
+        <PayPalPayment order_id={order_id} />
       </PayPalScriptProvider>
 
       <div className="flex gap-3 flex-col">
