@@ -9,6 +9,7 @@ import { Listbox } from "@headlessui/react";
 import Button from "../Button";
 import Select from "../Select";
 import ReactSelect from "react-select";
+import toast from "react-hot-toast";
 
 const dropDownDataClass = {
   // name: "Yoga Class",
@@ -83,29 +84,29 @@ const meditationClass = {
   // name: "meditation Class type",
   options: [
     {
-      label: "Depression ",
-      value: "Depression ",
+      label: "Depression",
+      value: "Depression",
     },
     {
-      label: "Anxiety ",
-      value: "Anxiety ",
+      label: "Anxiety",
+      value: "Anxiety",
     },
     {
-      label: "Happiness  ",
-      value: "Happiness  ",
+      label: "Happiness",
+      value: "Happiness",
     },
     {
-      label: "Mental Detox ",
-      value: "Mental Detox  ",
+      label: "Mental Detox",
+      value: "Mental Detox",
     },
 
     {
-      label: "Breathing technique ",
-      value: "Breathing technique  ",
+      label: "Breathing technique",
+      value: "Breathing technique",
     },
     {
-      label: "Mudras ",
-      value: "Mudras ",
+      label: "Mudras",
+      value: "Mudras",
     },
     {
       label: "Concentration",
@@ -119,48 +120,48 @@ const wellnessClass = {
   // name: "Wellness Counselling  type",
   options: [
     {
-      label: "Nutrition as per body type ",
-      value: "Nutrition as per body type  ",
+      label: "Nutrition as per body type",
+      value: "Nutrition as per body type",
     },
     {
-      label: "Weight management ",
-      value: "HWeight management  ",
+      label: "Weight management",
+      value: "HWeight management",
     },
     {
-      label: "Diabetes  ",
-      value: "Diabetes   ",
+      label: "Diabetes",
+      value: "Diabetes",
     },
     {
-      label: "Thyroid  ",
-      value: "Thyroid  ",
+      label: "Thyroid",
+      value: "Thyroid",
     },
     {
-      label: "Blood pressure  ",
-      value: "Blood pressure ",
+      label: "Blood pressure",
+      value: "Blood pressure",
     },
     {
       label: "Cholesterol",
       value: "Cholesterol",
     },
     {
-      label: " Arthritis ",
-      value: "Arthritis ",
+      label: " Arthritis",
+      value: "Arthritis",
     },
     {
-      label: "Fatty liver ",
-      value: "Fatty liver ",
+      label: "Fatty liver",
+      value: "Fatty liver",
     },
     {
-      label: "Kidney problem ",
+      label: "Kidney problem",
       value: "Kidney problem",
     },
     {
-      label: "Prostate ",
-      value: "Prostate ",
+      label: "Prostate",
+      value: "Prostate",
     },
     {
-      label: "Any other problems ",
-      value: "Any other problems ",
+      label: "Any other problems",
+      value: "Any other problems",
     },
   ],
 };
@@ -171,24 +172,24 @@ const learningClass = {
   // name: "Learning Class type",
   options: [
     {
-      label: "Bhagvat Gita Class for kids  ",
-      value: "Bhagvat Gita Class for kids  ",
+      label: "Bhagvat Gita Class for kids",
+      value: "Bhagvat Gita Class for kids",
     },
     {
-      label: "Public Speaking ",
-      value: "Public Speaking ",
+      label: "Public Speaking",
+      value: "Public Speaking",
     },
     {
-      label: "Slokas Recitation ",
-      value: "Slokas Recitation ",
+      label: "Slokas Recitation",
+      value: "Slokas Recitation",
     },
     {
-      label: "Srimat Bhagavat mahapuran ",
-      value: "Srimat Bhagavat mahapuran ",
+      label: "Srimat Bhagavat mahapuran",
+      value: "Srimat Bhagavat mahapuran",
     },
     {
-      label: "Book Club ",
-      value: "Book Club ",
+      label: "Book Club",
+      value: "Book Club",
     },
   ],
 };
@@ -211,8 +212,8 @@ const eventsClass = {
       value: "Elderly Online Book Club  ",
     },
     {
-      label: "Kids  online slokas recitation  ",
-      value: "Kids  online slokas recitation  ",
+      label: "Kids  online slokas recitation",
+      value: "Kids  online slokas recitation",
     },
     {
       label: "Kids online Gita Reading",
@@ -221,13 +222,13 @@ const eventsClass = {
   ],
 };
 
-function Form2({ setStep, setForm1Data }) {
+function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
   const [selectedPerson, setSelectedPerson] = useState(1);
-  const [firsSelectedValue, setFirsSelectedValue] = useState(
-    dropDownDataClass.options[0]
-  );
+  const [firsSelectedValue, setFirsSelectedValue] = useState();
   const [secondSelectedValue, setSecondSelectedValue] = useState(null);
   const [secondOption, setSecondOption] = useState(null);
+  const [sessionTime, setSessionTime] = useState(null);
+  const [error, setError] = useState(null);
 
   const switchClass = () => {
     switch (selectedPerson) {
@@ -256,6 +257,16 @@ function Form2({ setStep, setForm1Data }) {
     console.log(switchClass().options[0]);
   }, [selectedPerson]);
 
+  const formValidation = () => {
+    if (form2Data.class && form2Data.class_type && sessionTime) {
+      setStep(2);
+    } else if (!firsSelectedValue || !secondOption || sessionTime) {
+      setError(true);
+    }
+  };
+
+  console.log({ form2Data });
+
   return (
     <div className=" flex flex-col">
       <p className="mb-6 text-[#4B5563] font-bold text-4xl">
@@ -277,27 +288,54 @@ function Form2({ setStep, setForm1Data }) {
           onChange={(e) => {
             setSelectedPerson(e.id);
             setFirsSelectedValue(e);
+            setForm2Data({ ...form2Data, class: e.value });
           }}
           options={dropDownDataClass.options}
         />
-        <ReactSelect
-          className="basic-single"
-          classNamePrefix="select"
-          defaultValue={secondOption}
-          value={secondSelectedValue ?? switchClass().options[0]}
-          isSearchable={true}
-          name="color"
+        {firsSelectedValue && (
+          <ReactSelect
+            className="basic-single"
+            classNamePrefix="select"
+            defaultValue={secondOption}
+            value={secondSelectedValue}
+            isSearchable={true}
+            name="color"
+            onChange={(e) => {
+              console.log("222", e);
+              setSecondSelectedValue(e);
+              setForm2Data({ ...form2Data, class_type: e.value });
+            }}
+            options={switchClass().options}
+          />
+        )}
+        <Input
+          type="text"
+          placeholder="Session Time"
           onChange={(e) => {
-            console.log("222", e);
-            setSecondSelectedValue(e);
+            console.log(e.target.value);
+            setSessionTime(e.target.value);
+            setForm2Data({
+              ...form2Data,
+              sessionTime: e.target.value,
+            });
           }}
-          options={switchClass().options}
         />
-        <Input type="text" placeholder="Session Time" />
       </div>
 
+      {error && (
+        <p className="text-sm text-red-600 mt-5 ">
+          Some fields are empty. Please fill the form
+        </p>
+      )}
+
       <div className="flex flex-col gap-3 mt-3">
-        <Button onClick={() => setStep(3)}>Continue</Button>
+        <Button
+          onClick={() => {
+            formValidation();
+          }}
+        >
+          Continue
+        </Button>
         <Button
           type={"secondary"}
           onClick={() => {

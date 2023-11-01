@@ -5,9 +5,44 @@ import React from "react";
 import Input from "../Input";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
-function Form1({ setStep, form1Data, setForm1Data }) {
+function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
   const router = useRouter();
+  const [error, setError] = useState(null);
+
+  const handleApiOrderSubmit = async () => {
+    try {
+      if (form1Data.client_name && form1Data.email && form1Data.country) {
+        const response = await axios.post(`/api/order`, {
+          ...form1Data,
+          ...form2Data,
+        });
+        console.log({ response });
+
+        router.push(`?orderId=${response.data?._id}`);
+        setStep(3);
+      } else if (
+        !form1Data.client_name ||
+        !form1Data.email ||
+        !form1Data.country
+      ) {
+        setError(true);
+      }
+    } catch (error) {
+      toast.error("Failed to submit");
+    }
+  };
+
+  const formValidation = () => {
+    if (form2Data.class && form2Data.class_type && sessionTime) {
+      setStep(2);
+    } else if (!firsSelectedValue || !secondOption || sessionTime) {
+      setError(true);
+    }
+  };
 
   return (
     <div>
@@ -28,7 +63,7 @@ function Form1({ setStep, form1Data, setForm1Data }) {
           onChange={(e) =>
             setForm1Data({
               ...form1Data,
-              firstName: e.target.value,
+              client_name: e.target.value,
             })
           }
         />
@@ -56,8 +91,20 @@ function Form1({ setStep, form1Data, setForm1Data }) {
         />
       </div>
 
+      {error && (
+        <p className="text-sm text-red-600 my-5 ">
+          Some fields are empty. Please fill the form
+        </p>
+      )}
+
       <div className="flex gap-3 flex-col">
-        <Button onClick={() => setStep(2)}>Continue</Button>
+        <Button
+          onClick={() => {
+            handleApiOrderSubmit();
+          }}
+        >
+          Continue
+        </Button>
         <Button type="secondary" onClick={() => router.push("/")}>
           Back to Home
         </Button>
