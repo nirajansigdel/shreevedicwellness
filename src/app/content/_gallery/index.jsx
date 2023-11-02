@@ -16,7 +16,7 @@ function Index() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="my-10 ">
+    <div className="my-10 " id="gallery">
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Gallery
       </p>

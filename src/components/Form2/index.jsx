@@ -10,6 +10,7 @@ import Button from "../Button";
 import Select from "../Select";
 import ReactSelect from "react-select";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const dropDownDataClass = {
   // name: "Yoga Class",
@@ -230,6 +231,8 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
   const [sessionTime, setSessionTime] = useState(null);
   const [error, setError] = useState(null);
 
+  const router = useRouter();
+
   const switchClass = () => {
     switch (selectedPerson) {
       case 1:
@@ -339,7 +342,7 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
         <Button
           type={"secondary"}
           onClick={() => {
-            setStep(1);
+            router.push("/");
             setForm1Data({});
           }}
         >

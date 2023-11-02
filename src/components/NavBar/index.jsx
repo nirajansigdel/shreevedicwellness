@@ -37,8 +37,8 @@ function Index() {
             <span className="text-[#4B5563] font-medium">Courses</span>
           </Link>
 
-          <Link href={"/"}>
-            <span className="text-[#4B5563] font-medium">Pricing</span>
+          <Link href={"#gallery"}>
+            <span className="text-[#4B5563] font-medium">Gallery</span>
           </Link>
           <Link href={"/registration"}>
             <span className="text-white rounded-md px-4 py-2 font-medium bg-[#22C55E]">
