@@ -6,9 +6,9 @@ import Link from "next/link";
 
 function Index() {
   return (
-    <div className="mx-8 pb-12">
-      <div className="mx-auto border p-10 rounded-md flex flex-col gap-4  w-full md:w-4/5 bg-white py-[10px] md:py-[22px] flex items-center justify-center  ">
-        <div className="py-6  md:py-0 flex w-full gap-5 flex flex-col md:flex-row justify-between">
+    <div className="w-full  pb-12">
+      <div className="mx-auto border p-10 rounded-md flex-col gap-4  w-full  bg-white py-[10px] md:py-[22px] flex items-center justify-center  ">
+        <div className="py-6  md:py-0 flex w-full gap-5  flex-col md:flex-row justify-between">
           <div className="flex   flex-col items-center md:items-start  gap-5">
             <svg
               stroke="currentColor"

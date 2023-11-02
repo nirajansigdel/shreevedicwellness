@@ -12,14 +12,14 @@ import Gallery from "./content/_gallery";
 function Content() {
   return (
     <div className="flex bg-white flex-col h-screen  w-full  ">
-      <NavBar />
-      <div className="w-4/5 mx-auto flex flex-col flex-1">
+      <div className="w-4/5  mx-auto flex flex-col flex-1">
+        <NavBar />
         <Hero />
-        <Learn/>
-        <Popular/>
-      <Gallery />
+        <Learn />
+        <Popular />
+        <Gallery />
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
