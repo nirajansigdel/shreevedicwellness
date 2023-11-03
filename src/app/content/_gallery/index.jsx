@@ -24,15 +24,17 @@ function Index() {
         Explore our Yoga Gallery. A Visual journey Through Serenity
       </p>
 
-      <div className="flex  w-full grid sm:grid-cols-1 md:grid-cols-3 gap-10   mx-auto w-full justify-between">
-        {arrayImages.map((image) => (
+      <div className=" grid sm:grid-cols-1 md:grid-cols-3 gap-10 mx-auto w-full justify-between">
+        {arrayImages.map((image, index) => (
           <div
+            className=" relative flex items-center justify-center w-full "
+            key={index}
             onClick={() => {
               setOpenImageModal(true);
               setSelectedImage(image);
             }}
           >
-            <Image src={image} alt="image" className="w-full" />
+            <Image src={image} alt="image" className="w-120 " />
           </div>
         ))}
       </div>
