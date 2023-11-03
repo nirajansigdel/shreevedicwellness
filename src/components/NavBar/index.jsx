@@ -33,7 +33,7 @@ function Index() {
           <Link href={"/"}>
             <span className="text-[#4B5563] font-medium">Home</span>
           </Link>
-          <Link href={"/"}>
+          <Link href={"#courses"}>
             <span className="text-[#4B5563] font-medium">Courses</span>
           </Link>
 

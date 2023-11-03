@@ -48,7 +48,7 @@ function Index() {
   ];
 
   return (
-    <div className="my-20">
+    <div id="courses" className="my-20">
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Most Popular Classes
       </p>
