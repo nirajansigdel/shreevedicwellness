@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,13 +12,17 @@ const DatePickerComponent = ({ onChange, form2Data }) => {
     return date >= today;
   };
 
+  useEffect(() => {
+    onChange({ ...form2Data, session_date: today });
+  }, []);
+
   return (
     <div className="border rounded-md px-3 py-3">
       <DatePicker
         selected={startDate}
         onChange={(date) => {
           setStartDate(date);
-          onChange({ ...form2Data, class_date: date });
+          onChange({ ...form2Data, session_date: date });
         }}
         minDate={today}
         filterDate={isDateSelectable}

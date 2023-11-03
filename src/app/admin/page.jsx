@@ -31,7 +31,8 @@ export default function TableDemo() {
       month: "long",
       day: "numeric",
     };
-    return date.toLocaleDateString(undefined, options);
+
+    return date.toLocaleDateString(undefined, options) ?? "";
   }
 
   const pageCount = Math.ceil(orders.length / itemsPerPage);
@@ -69,6 +70,12 @@ export default function TableDemo() {
               <th className="px-6 py-3 text-left text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-500 uppercase tracking-wider">
                 Created At
               </th>
+              <th className="px-6 py-3 text-left text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-500 uppercase tracking-wider">
+                Session Date
+              </th>
+              <th className="px-6 py-3 text-left text-xs sm:text-sm md:text-base lg:text-lg font-bold text-gray-500 uppercase tracking-wider">
+                Session Time
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -88,6 +95,12 @@ export default function TableDemo() {
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl text-gray-500">
                   {formatDate(invoice.createdAt)}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl text-gray-500">
+                  {formatDate(invoice.session_date) ?? null}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm sm:text-base md:text-lg lg:text-xl text-gray-500">
+                  {invoice.session_time ?? "-"}
                 </td>
               </tr>
             ))}
