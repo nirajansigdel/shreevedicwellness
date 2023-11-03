@@ -25,3 +25,11 @@
 
 body {
 }
+
+.react-datepicker-ignore-onclickoutside {
+  outline: none;
+}
+
+input {
+  outline: none;
+}

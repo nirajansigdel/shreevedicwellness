@@ -12,6 +12,8 @@ import ReactSelect from "react-select";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
+import Calendar from "../Calendar";
+
 const dropDownDataClass = {
   // name: "Yoga Class",
   options: [
@@ -164,6 +166,14 @@ const wellnessClass = {
       label: "Any other problems",
       value: "Any other problems",
     },
+    {
+      label: "Mental Health Councelling",
+      value: "Mental Health Councelling",
+    },
+    {
+      label: "Ayurvedic Health and Wellness",
+      value: "Ayurvedic Health and Wellness",
+    },
   ],
 };
 
@@ -191,6 +201,14 @@ const learningClass = {
     {
       label: "Book Club",
       value: "Book Club",
+    },
+    {
+      label: "Nepali Language",
+      value: "Nepali Language",
+    },
+    {
+      label: "Sanskrit Language",
+      value: "Sanskrit Language",
     },
   ],
 };
@@ -270,6 +288,26 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
 
   console.log({ form2Data });
 
+  const SessionTimeSpan = ({ text, id }) => {
+    return (
+      <span
+        onClick={() => {
+          setForm2Data({
+            ...form2Data,
+            session_time: text,
+          });
+          setSessionTime(id);
+        }}
+        role="button"
+        className={`${"text-sm rounded-md text-[#4B5563] border-2  px-4 py-2"} ${
+          id == sessionTime && "text-white bg-[#4B5563] "
+        }`}
+      >
+        {text}
+      </span>
+    );
+  };
+
   return (
     <div className=" flex flex-col">
       <p className="mb-6 text-[#4B5563] font-bold text-4xl">
@@ -311,18 +349,13 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
             options={switchClass().options}
           />
         )}
-        <Input
-          type="text"
-          placeholder="Session Time"
-          onChange={(e) => {
-            console.log(e.target.value);
-            setSessionTime(e.target.value);
-            setForm2Data({
-              ...form2Data,
-              sessionTime: e.target.value,
-            });
-          }}
-        />
+
+        <Calendar onChange={setForm2Data} form2Data={form2Data} />
+
+        <div className="space-x-4 my-2">
+          <SessionTimeSpan text={"7 - 10 a.m"} id={1} />
+          <SessionTimeSpan text={"4 - 7 p.m"} id={2} />
+        </div>
       </div>
 
       {error && (

@@ -8,6 +8,7 @@ import Hero from "./content/_hero";
 import Learn from "./content/_learn";
 import Popular from "./content/_popular";
 import Gallery from "./content/_gallery";
+import Contact from "./content/_contact";
 
 function Content() {
   return (
@@ -18,6 +19,7 @@ function Content() {
         <Learn />
         <Popular />
         <Gallery />
+        <Contact />
         <Footer />
       </div>
     </div>
