@@ -39,7 +39,9 @@ function Index() {
             <a href="#learn-with-us">
               <span className="text-[#4B5563] font-medium">Learn with us</span>
             </a>
+            <a href="#contact">
             <span className="text-[#4B5563] font-medium">Contact us</span>
+            </a>
           </div>
 
           <div className="flex gap-5  justify-center md:justify-start items-center">

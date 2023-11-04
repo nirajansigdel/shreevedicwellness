@@ -65,20 +65,20 @@ const yogaClass = {
       value: "Pregnancy  ",
     },
     {
-      label: "Elderly / chair yoga ",
-      value: "Elderly / chair yoga ",
+      label: "Elderly / Chair Yoga ",
+      value: "Elderly / Chair Yoga ",
     },
     {
-      value: "Detox yoga",
-      label: "Detox yoga",
+      value: "Detox Yoga",
+      label: "Detox Yoga",
     },
     {
       label: " Backpain",
       value: " Backpain",
     },
     {
-      label: "Join pain",
-      value: "Join pain",
+      label: "Join Pain",
+      value: "Join Pain",
     },
   ],
 };
@@ -104,8 +104,8 @@ const meditationClass = {
     },
 
     {
-      label: "Breathing technique",
-      value: "Breathing technique",
+      label: "Breathing Technique",
+      value: "Breathing Technique",
     },
     {
       label: "Mudras",
@@ -123,12 +123,12 @@ const wellnessClass = {
   // name: "Wellness Counselling  type",
   options: [
     {
-      label: "Nutrition as per body type",
-      value: "Nutrition as per body type",
+      label: "Nutrition As Per Body Type",
+      value: "Nutrition As Per Body Type",
     },
     {
-      label: "Weight management",
-      value: "HWeight management",
+      label: "Weight Management",
+      value: "Weight Management",
     },
     {
       label: "Diabetes",
@@ -139,8 +139,8 @@ const wellnessClass = {
       value: "Thyroid",
     },
     {
-      label: "Blood pressure",
-      value: "Blood pressure",
+      label: "Blood Pressure",
+      value: "Blood Pressure",
     },
     {
       label: "Cholesterol",
@@ -151,20 +151,20 @@ const wellnessClass = {
       value: "Arthritis",
     },
     {
-      label: "Fatty liver",
-      value: "Fatty liver",
+      label: "Fatty Liver",
+      value: "Fatty Liver",
     },
     {
-      label: "Kidney problem",
-      value: "Kidney problem",
+      label: "Kidney Problem",
+      value: "Kidney Problem",
     },
     {
       label: "Prostate",
       value: "Prostate",
     },
     {
-      label: "Any other problems",
-      value: "Any other problems",
+      label: "Any Other Problems",
+      value: "Any Other Problems",
     },
     {
       label: "Mental Health Councelling",
@@ -183,8 +183,8 @@ const learningClass = {
   // name: "Learning Class type",
   options: [
     {
-      label: "Bhagvat Gita Class for kids",
-      value: "Bhagvat Gita Class for kids",
+      label: "Bhagvat Gita Class for Kids",
+      value: "Bhagvat Gita Class for Kids",
     },
     {
       label: "Public Speaking",
@@ -195,12 +195,12 @@ const learningClass = {
       value: "Slokas Recitation",
     },
     {
-      label: "Srimat Bhagavat mahapuran",
-      value: "Srimat Bhagavat mahapuran",
+      label: "Srimat Bhagavat Mahapuran",
+      value: "Srimat Bhagavat Mahapuran",
     },
     {
-      label: "Book Club",
-      value: "Book Club",
+      label: "Book Club",
+      value: "Book Club",
     },
     {
       label: "Nepali Language",
@@ -219,24 +219,24 @@ const eventsClass = {
   // name: "Events Class type",
   options: [
     {
-      label: "kids online Book club ",
-      value: "kids online Book club",
+      label: "Kids Online Book Club ",
+      value: "Kids Online Book Club",
     },
     {
-      label: "Adult online book club",
-      value: "Adult online book club",
+      label: "Adult Online Book Club",
+      value: "Adult Online Book Club",
     },
     {
       label: "Elderly Online Book Club  ",
       value: "Elderly Online Book Club  ",
     },
     {
-      label: "Kids  online slokas recitation",
-      value: "Kids  online slokas recitation",
+      label: "Kids  Online Slokas Recitation",
+      value: "Kids  Online Slokas Recitation",
     },
     {
-      label: "Kids online Gita Reading",
-      value: "Kids online Gita Reading",
+      label: "Kids Online Gita Reading",
+      value: "Kids Online Gita Reading",
     },
   ],
 };
@@ -351,10 +351,18 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
         )}
 
         <Calendar onChange={setForm2Data} form2Data={form2Data} />
-
-        <div className="space-x-4 my-2">
-          <SessionTimeSpan text={"7 - 10 a.m"} id={1} />
-          <SessionTimeSpan text={"4 - 7 p.m"} id={2} />
+     <div className="flex flex-col ">
+      <span>session time</span>
+      </div>
+        <div className=" flex flex-wrap gap-2 ">
+          <SessionTimeSpan  text={"5 -6 a.m" } id={1} />
+          <SessionTimeSpan  text={"6 - 7 a.m"} id={2} />
+          <SessionTimeSpan  text={"7 - 8 a.m"} id={3} />
+          <SessionTimeSpan  text={"5 - 6 p.m"} id={4} />
+          <SessionTimeSpan  text={"6 - 7 p.m"} id={5} />
+          <SessionTimeSpan  text={"7 - 8 a.m"} id={6} />
+          
+          
         </div>
       </div>
 

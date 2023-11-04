@@ -42,7 +42,7 @@ function Index() {
   return (
     <div
       className="my-10 px-5 md:px-20 bg-[#F2F9F5] rounded-md py-10"
-      id="gallery"
+      id="contact"
     >
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Connect with us
@@ -90,6 +90,7 @@ function Index() {
           <Input
             type="textarea"
             placeholder="Message"
+            className="min-h-[40px] h-[127px]"
             onChange={(e) =>
               setForm1Data({
                 ...form1Data,
@@ -98,7 +99,7 @@ function Index() {
             }
           />
 
-          <div className="mt-10">
+          <div className="mt-6">
             <Button
               onClick={() => {
                 handleApiOrderSubmit();
@@ -118,7 +119,8 @@ function Index() {
             Feel free to connect with us through the contact details provided
             below for any type of enquiry or to establish a connection.
           </p> */}
-
+ <div className="flex flex-col gap-8">
+  <span className="flex text-[#22C55E] text-sm ">Feel free to connect with us through the contact details provided below for any type of enquiry or to establish a connection. We are here to assist you in a positive and helpful manner.</span>
           <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
             <span className="font-medium text-2xl">Contact</span>
             <div className="flex flex-col mt-4">
@@ -129,6 +131,14 @@ function Index() {
                 <span>Email : </span>
                 cksoli66@gmail.com
               </span>
+           
+            </div>
+            </div>
+
+
+            <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
+            <span className="font-medium text-2xl">Location</span>
+            <div className="flex flex-col mt-4">
               <span className="text-sm">
                 <span>Location : </span>
                 Forth Worth Dallas
@@ -137,6 +147,7 @@ function Index() {
                 <span>Address : </span>
                 North Road 435673Kth Street
               </span>
+            </div>
             </div>
           </div>
         </div>
