@@ -90,7 +90,7 @@ function Index() {
           <Input
             type="textarea"
             placeholder="Message"
-            className="min-h-[40px] h-[127px]"
+            className="min-h-[40px] h-[107px]"
             onChange={(e) =>
               setForm1Data({
                 ...form1Data,
@@ -125,11 +125,11 @@ function Index() {
             <span className="font-medium text-2xl">Contact</span>
             <div className="flex flex-col mt-4">
               <span className="text-sm">
-                <span>Phone no : </span>817 715 3823
+                <span>Phone no : </span>5714749074
               </span>
               <span className="text-sm">
                 <span>Email : </span>
-                cksoli66@gmail.com
+                shreevedicwellnesscenter@gmail.com
               </span>
            
             </div>
@@ -140,13 +140,9 @@ function Index() {
             <span className="font-medium text-2xl">Location</span>
             <div className="flex flex-col mt-4">
               <span className="text-sm">
-                <span>Location : </span>
-                Forth Worth Dallas
+                42011 bushclover terrace Aldie Virginia 20105
               </span>
-              <span className="text-sm">
-                <span>Address : </span>
-                North Road 435673Kth Street
-              </span>
+             
             </div>
             </div>
           </div>
