@@ -9,6 +9,7 @@ import Image2 from "./img2.png";
 import Image3 from "./img3.png";
 import Image4 from "./img4.png";
 
+
 const arrayImages = [Image1, Image2, Image3, Image4, Image4, Image4];
 
 function Index() {

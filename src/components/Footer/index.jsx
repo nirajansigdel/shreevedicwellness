@@ -45,6 +45,8 @@ function Index() {
           </div>
 
           <div className="flex gap-5  justify-center md:justify-start items-center">
+
+           <a href=" https://www.facebook.com/ShreeVedicWellness">
             <span>
               <svg
                 stroke="currentColor"
@@ -58,6 +60,8 @@ function Index() {
                 <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
               </svg>
             </span>
+            </a>
+            <a href=" https://www.facebook.com/ShreeVedicWellness">
             <span>
               <svg
                 stroke="currentColor"
@@ -72,6 +76,8 @@ function Index() {
                 <circle cx="11.994" cy="11.979" r="3.003"></circle>
               </svg>
             </span>
+            </a>
+            <a href="https://www.youtube.com/watch?v=Eh8GJLXOmEk&t=9s">
             <span>
               <svg
                 stroke="currentColor"
@@ -85,6 +91,7 @@ function Index() {
                 <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path>
               </svg>
             </span>
+            </a>
           </div>
         </div>
 

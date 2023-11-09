@@ -123,13 +123,15 @@ function Index() {
   <span className="flex text-[#22C55E] text-sm ">Feel free to connect with us through the contact details provided below for any type of enquiry or to establish a connection. We are here to assist you in a positive and helpful manner.</span>
           <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
             <span className="font-medium text-2xl">Contact</span>
-            <div className="flex flex-col mt-4">
+            <div className="flex flex-col mt-4 gap-2">
               <span className="text-sm">
                 <span>Phone no : </span>5714749074
               </span>
               <span className="text-sm">
                 <span>Email : </span>
-                shreevedicwellnesscenter@gmail.com
+                <a href="mailto:shreevedicwellnesscenter@gmail.com" className="font-sm">shreevedicwellnesscenter@gmail.com</a>
+
+                
               </span>
            
             </div>
