@@ -48,6 +48,7 @@ export const createOrder = async (order_id) => {
       },
     ],
   };
+  console.log(payload.purchase_units[0].amount);
 
   const response = await fetch(url, {
     headers: {
