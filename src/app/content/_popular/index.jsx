@@ -7,6 +7,7 @@ import Image4 from "./img4.png";
 import Image5 from "./img5.png";
 import Image6 from "./img6.png";
 import Animated from "@/components/Animated";
+import Link from "next/link";
 
 function Index() {
   const data = [
@@ -74,9 +75,12 @@ function Index() {
                 </p>
               </div>
               <div className=" flex justify-between px-4">
-                <p className="text-[11px] font-medium text-[#22C55E] mt-2">
+                <Link
+                  href="/registration"
+                  className="text-sm font-medium text-[#22C55E] mt-2"
+                >
                   Join Now
-                </p>
+                </Link>
                 <p className="text-[11px] font-medium mt-1">8 days</p>
               </div>
             </div>

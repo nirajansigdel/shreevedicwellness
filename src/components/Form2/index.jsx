@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 import Calendar from "../Calendar";
+import Animated from "../Animated";
 
 const dropDownDataClass = {
   // name: "Yoga Class",
@@ -310,60 +311,69 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
 
   return (
     <div className=" flex flex-col">
-      <p className="mb-6 text-[#4B5563] font-bold text-4xl">
+      <Animated as="p" className="mb-6 text-[#4B5563] font-bold text-4xl">
         Class Registration 🧘‍♂️
-      </p>
-      <p className="mb-8 text-[#9CA3AF] font-medium text-[13px]">
+      </Animated>
+      <Animated as="p" className="mb-8 text-[#9CA3AF] font-medium text-[13px]">
         Embrace Tranquility, Nurture Your Soul, and Begin Your Yoga Journey with
         Us. Unleash Inner Harmony and Radiate Well-being. Please provide us your
         email.
-      </p>
+      </Animated>
 
       <div className="flex flex-col gap-3">
-        <ReactSelect
-          className="basic-single"
-          classNamePrefix="select"
-          isSearchable={true}
-          value={firsSelectedValue}
-          name="color"
-          onChange={(e) => {
-            setSelectedPerson(e.id);
-            setFirsSelectedValue(e);
-            setForm2Data({ ...form2Data, class: e.value });
-          }}
-          options={dropDownDataClass.options}
-        />
-        {firsSelectedValue && (
+        <Animated>
+          <p className="text-secondary">Session Type</p>
           <ReactSelect
             className="basic-single"
             classNamePrefix="select"
-            defaultValue={secondOption}
-            value={secondSelectedValue}
             isSearchable={true}
+            value={firsSelectedValue}
             name="color"
             onChange={(e) => {
-              console.log("222", e);
-              setSecondSelectedValue(e);
-              setForm2Data({ ...form2Data, class_type: e.value });
+              setSelectedPerson(e.id);
+              setFirsSelectedValue(e);
+              setForm2Data({ ...form2Data, class: e.value });
             }}
-            options={switchClass().options}
+            options={dropDownDataClass.options}
           />
+        </Animated>
+        {firsSelectedValue && (
+          <Animated>
+            <p className="text-secondary">{firsSelectedValue.value} Type</p>
+            <ReactSelect
+              className="basic-single"
+              classNamePrefix="select"
+              defaultValue={secondOption}
+              value={secondSelectedValue}
+              isSearchable={true}
+              name="color"
+              onChange={(e) => {
+                console.log("222", e);
+                setSecondSelectedValue(e);
+                setForm2Data({ ...form2Data, class_type: e.value });
+              }}
+              options={switchClass().options}
+            />
+          </Animated>
         )}
 
-        <Calendar onChange={setForm2Data} form2Data={form2Data} />
-     <div className="flex flex-col ">
-      <span>session time</span>
-      </div>
-        <div className=" flex flex-wrap gap-2 ">
-          <SessionTimeSpan  text={"5 -6 a.m" } id={1} />
-          <SessionTimeSpan  text={"6 - 7 a.m"} id={2} />
-          <SessionTimeSpan  text={"7 - 8 a.m"} id={3} />
-          <SessionTimeSpan  text={"5 - 6 p.m"} id={4} />
-          <SessionTimeSpan  text={"6 - 7 p.m"} id={5} />
-          <SessionTimeSpan  text={"7 - 8 a.m"} id={6} />
-          
-          
-        </div>
+        <Animated>
+          <p className="text-secondary">Session Date</p>
+          <Calendar onChange={setForm2Data} form2Data={form2Data} />
+        </Animated>
+        <Animated>
+          <div className="flex flex-col ">
+            <p className="text-secondary">Session Time</p>
+          </div>
+          <div className=" flex flex-wrap gap-2 ">
+            <SessionTimeSpan text={"5 -6 a.m"} id={1} />
+            <SessionTimeSpan text={"6 - 7 a.m"} id={2} />
+            <SessionTimeSpan text={"7 - 8 a.m"} id={3} />
+            <SessionTimeSpan text={"5 - 6 p.m"} id={4} />
+            <SessionTimeSpan text={"6 - 7 p.m"} id={5} />
+            <SessionTimeSpan text={"7 - 8 a.m"} id={6} />
+          </div>
+        </Animated>
       </div>
 
       {error && (
@@ -372,7 +382,7 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
         </p>
       )}
 
-      <div className="flex flex-col gap-3 mt-3">
+      <Animated className="flex flex-col gap-3 mt-3">
         <Button
           onClick={() => {
             formValidation();
@@ -389,7 +399,7 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
         >
           Go Back
         </Button>
-      </div>
+      </Animated>
     </div>
   );
 }
