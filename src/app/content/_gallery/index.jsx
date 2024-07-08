@@ -8,7 +8,7 @@ import Image1 from "./img1.png";
 import Image2 from "./img2.png";
 import Image3 from "./img3.png";
 import Image4 from "./img4.png";
-
+import Animated from "@/components/Animated";
 
 const arrayImages = [Image1, Image2, Image3, Image4, Image4, Image4];
 
@@ -17,7 +17,7 @@ function Index() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="my-10 " id="gallery">
+    <Animated className="my-10 " id="gallery">
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Gallery
       </p>
@@ -43,7 +43,7 @@ function Index() {
       {openImageModal && (
         <ImageModal setIsOpen={setOpenImageModal} image={selectedImage} />
       )}
-    </div>
+    </Animated>
   );
 }
 

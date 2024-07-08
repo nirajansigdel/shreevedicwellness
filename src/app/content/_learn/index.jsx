@@ -6,6 +6,7 @@ import Pic2 from "./pic2.png";
 import Pic3 from "./pic3.png";
 import Pic4 from "./pic4.png";
 import Pic5 from "./pic5.png";
+import Animated from "@/components/Animated";
 
 const data = [
   {
@@ -54,7 +55,7 @@ const data = [
 
 function Index() {
   return (
-    <div id="learn-with-us">
+    <Animated id="learn-with-us" className="">
       <p className="text-[#4B5563]  text-[29px] font-medium text-center">
         Learn With Us
       </p>
@@ -76,7 +77,7 @@ function Index() {
           </div>
         ))}
       </div>
-    </div>
+    </Animated>
   );
 }
 

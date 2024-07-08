@@ -1,5 +1,6 @@
 "use client";
 
+import Animated from "@/components/Animated";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import React, { useState } from "react";
@@ -40,7 +41,7 @@ function Index() {
   };
 
   return (
-    <div
+    <Animated
       className="my-10 px-5 md:px-20 bg-[#F2F9F5] rounded-md py-10"
       id="contact"
     >
@@ -119,38 +120,42 @@ function Index() {
             Feel free to connect with us through the contact details provided
             below for any type of enquiry or to establish a connection.
           </p> */}
- <div className="flex flex-col gap-8">
-  <span className="flex text-[#22C55E] text-sm ">Feel free to connect with us through the contact details provided below for any type of enquiry or to establish a connection. We are here to assist you in a positive and helpful manner.</span>
-          <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
-            <span className="font-medium text-2xl">Contact</span>
-            <div className="flex flex-col mt-4 gap-2">
-              <span className="text-sm">
-                <span>Phone no : </span>5714749074
-              </span>
-              <span className="text-sm">
-                <span>Email : </span>
-                <a href="mailto:shreevedicwellnesscenter@gmail.com" className="font-sm">shreevedicwellnesscenter@gmail.com</a>
-
-                
-              </span>
-           
+          <div className="flex flex-col gap-8">
+            <span className="flex text-[#22C55E] text-sm ">
+              Feel free to connect with us through the contact details provided
+              below for any type of enquiry or to establish a connection. We are
+              here to assist you in a positive and helpful manner.
+            </span>
+            <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
+              <span className="font-medium text-2xl">Contact</span>
+              <div className="flex flex-col mt-4 gap-2">
+                <span className="text-sm">
+                  <span>Phone no : </span>5714749074
+                </span>
+                <span className="text-sm">
+                  <span>Email : </span>
+                  <a
+                    href="mailto:shreevedicwellnesscenter@gmail.com"
+                    className="font-sm"
+                  >
+                    shreevedicwellnesscenter@gmail.com
+                  </a>
+                </span>
+              </div>
             </div>
-            </div>
-
 
             <div className="bg-[#22C55E] px-5 md:px-10 py-5 rounded-md text-white">
-            <span className="font-medium text-2xl">Location</span>
-            <div className="flex flex-col mt-4">
-              <span className="text-sm">
-                42011 bushclover terrace Aldie Virginia 20105
-              </span>
-             
-            </div>
+              <span className="font-medium text-2xl">Location</span>
+              <div className="flex flex-col mt-4">
+                <span className="text-sm">
+                  42011 bushclover terrace Aldie Virginia 20105
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Animated>
   );
 }
 

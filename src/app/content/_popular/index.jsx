@@ -6,6 +6,7 @@ import Image3 from "./img3.png";
 import Image4 from "./img4.png";
 import Image5 from "./img5.png";
 import Image6 from "./img6.png";
+import Animated from "@/components/Animated";
 
 function Index() {
   const data = [
@@ -48,7 +49,7 @@ function Index() {
   ];
 
   return (
-    <div id="courses" className="my-20">
+    <Animated id="courses" className="my-20">
       <p className="text-[#4B5563] text-[29px] font-medium text-center">
         Most Popular Classes
       </p>
@@ -82,7 +83,7 @@ function Index() {
           </div>
         ))}
       </div>
-    </div>
+    </Animated>
   );
 }
 

@@ -9,19 +9,22 @@ import Learn from "./content/_learn";
 import Popular from "./content/_popular";
 import Gallery from "./content/_gallery";
 import Contact from "./content/_contact";
+import AnimationContainer from "@/components/AnimationContainer";
 
 function Content() {
   return (
     <div className="flex bg-white flex-col h-screen  w-full  ">
-      <div className="w-4/5  mx-auto flex flex-col flex-1">
+      <AnimationContainer className="w-4/5  mx-auto flex flex-col flex-1">
         <NavBar />
-        <Hero />
-        <Learn />
-        <Popular />
-        <Gallery />
-        <Contact />
-        <Footer />
-      </div>
+        <div className="flex flex-col gap-24">
+          <Hero />
+          <Learn />
+          <Popular />
+          <Gallery />
+          <Contact />
+          <Footer />
+        </div>
+      </AnimationContainer>
     </div>
   );
 }
