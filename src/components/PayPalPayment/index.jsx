@@ -3,6 +3,7 @@ import React from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { Loader } from "react-icons";
 
 const PayPalPayment = ({ order_id }) => {
   const router = useRouter();
@@ -42,6 +43,16 @@ const PayPalPayment = ({ order_id }) => {
       }
     }
   };
+
+  // if (!order_id) {
+  //   return (
+  //     <div>
+  //       <span>
+  //         <Loader />
+  //       </span>
+  //     </div>
+  //   );
+  // }
 
   return <PayPalButtons createOrder={createOrder} onApprove={onApprove} />;
 };

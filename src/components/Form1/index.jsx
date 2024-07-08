@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import Animated from "../Animated";
 
 function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
   const router = useRouter();
@@ -46,17 +47,20 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
 
   return (
     <div>
-      <p className="text-[#4B5563] font-bold text-4xl">
-        Hello! Welcome To YOGASTA 👋
-      </p>
+      <Animated as="p" className="text-[#4B5563] font-bold text-4xl">
+        Hello! Welcome To ShreeVedic 👋
+      </Animated>
 
-      <p className="text-[#9CA3AF] text-center md:text-left font-medium text-sm mt-6">
+      <Animated
+        as="p"
+        className="text-[#9CA3AF] text-center md:text-left font-medium text-sm mt-6"
+      >
         Embrace Tranquility, Nurture Your Soul, and Begin Your Yoga Journey with
         Us. Unleash Inner Harmony and Radiate Well-being. Please provide us your
         email.
-      </p>
+      </Animated>
 
-      <div className="flex flex-col gap-3 mt-8 mb-3">
+      <Animated className="flex flex-col gap-3 mt-8 mb-3">
         <Input
           type="text"
           placeholder="Full Name"
@@ -89,7 +93,7 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
             })
           }
         />
-      </div>
+      </Animated>
 
       {error && (
         <p className="text-sm text-red-600 my-5 ">
@@ -97,7 +101,7 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
         </p>
       )}
 
-      <div className="flex gap-3 flex-col">
+      <Animated className="flex gap-3 flex-col">
         <Button
           onClick={() => {
             handleApiOrderSubmit();
@@ -108,7 +112,7 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
         <Button type="secondary" onClick={() => router.push("/")}>
           Back to Home
         </Button>
-      </div>
+      </Animated>
     </div>
   );
 }
