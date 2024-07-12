@@ -30,7 +30,7 @@ const PayPalPayment = ({ order_id }) => {
       console.log(res.data);
 
       toast.success("Payment Successful");
-      router.push("/");
+      router.push("/checkout/" + order_id);
       // Navigate to success page after payment successs
       // const url = `${window.location.protocol}//${window.location.host}/success`
 

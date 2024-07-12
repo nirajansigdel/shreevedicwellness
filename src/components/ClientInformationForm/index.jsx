@@ -11,7 +11,12 @@ import { useState } from "react";
 import Animated from "../Animated";
 import AnimationContainer from "../AnimationContainer";
 
-function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
+function ClientInformationForm({
+  setStep,
+  form1Data,
+  form2Data,
+  setForm1Data,
+}) {
   const router = useRouter();
   const [error, setError] = useState(null);
 
@@ -119,4 +124,4 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
   );
 }
 
-export default Form1;
+export default ClientInformationForm;

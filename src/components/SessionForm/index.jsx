@@ -243,7 +243,7 @@ const eventsClass = {
   ],
 };
 
-function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
+function SessionForm({ setStep, setForm1Data, form2Data, setForm2Data }) {
   const [selectedPerson, setSelectedPerson] = useState(1);
   const [firsSelectedValue, setFirsSelectedValue] = useState();
   const [secondSelectedValue, setSecondSelectedValue] = useState(null);
@@ -272,12 +272,10 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
 
   useEffect(() => {
     setSecondOption(switchClass().options[0]);
-    console.log(switchClass().options[0]);
   }, []);
 
   useEffect(() => {
     setSecondOption(switchClass().options[0]);
-    console.log(switchClass().options[0]);
   }, [selectedPerson]);
 
   const formValidation = () => {
@@ -287,8 +285,6 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
       setError(true);
     }
   };
-
-  console.log({ form2Data });
 
   const SessionTimeSpan = ({ text, id }) => {
     return (
@@ -366,13 +362,13 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
           <div className="flex flex-col ">
             <p className="text-secondary">Session Time</p>
           </div>
-          <div className=" flex flex-wrap gap-2 ">
-            <SessionTimeSpan text={"5 -6 a.m"} id={1} />
-            <SessionTimeSpan text={"6 - 7 a.m"} id={2} />
-            <SessionTimeSpan text={"7 - 8 a.m"} id={3} />
-            <SessionTimeSpan text={"5 - 6 p.m"} id={4} />
-            <SessionTimeSpan text={"6 - 7 p.m"} id={5} />
-            <SessionTimeSpan text={"7 - 8 a.m"} id={6} />
+          <div className="flex flex-wrap gap-2 ">
+            <SessionTimeSpan text={"5 -6 AM"} id={1} />
+            <SessionTimeSpan text={"6 - 7 AM"} id={2} />
+            <SessionTimeSpan text={"7 - 8 PM"} id={3} />
+            <SessionTimeSpan text={"5 - 6 PM"} id={4} />
+            <SessionTimeSpan text={"6 - 7 PM"} id={5} />
+            <SessionTimeSpan text={"7 - 8 AM"} id={6} />
           </div>
         </Animated>
       </div>
@@ -405,4 +401,4 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
   );
 }
 
-export default Form2;
+export default SessionForm;
