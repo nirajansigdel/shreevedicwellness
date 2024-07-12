@@ -3,7 +3,6 @@ import React from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Loader } from "react-icons";
 
 const PayPalPayment = ({ order_id }) => {
   const router = useRouter();
@@ -27,6 +26,9 @@ const PayPalPayment = ({ order_id }) => {
       const res = await axios.post(`/api/payment/capture/${data.orderID}`, {
         order_id,
       });
+
+      console.log(res.data);
+
       toast.success("Payment Successful");
       router.push("/");
       // Navigate to success page after payment successs
@@ -54,7 +56,17 @@ const PayPalPayment = ({ order_id }) => {
   //   );
   // }
 
-  return <PayPalButtons createOrder={createOrder} onApprove={onApprove} />;
+  if (!PayPalButtons) {
+    return <div className="py-12">Loading Please Wait...</div>;
+  }
+
+  return (
+    <PayPalButtons
+      createOrder={createOrder}
+      onApprove={onApprove}
+      onError={(error) => console.log(error)}
+    />
+  );
 };
 
 export default PayPalPayment;

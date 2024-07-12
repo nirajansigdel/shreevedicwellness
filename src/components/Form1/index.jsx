@@ -9,6 +9,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import Animated from "../Animated";
+import AnimationContainer from "../AnimationContainer";
 
 function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
   const router = useRouter();
@@ -21,6 +22,7 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
           ...form1Data,
           ...form2Data,
         });
+
         console.log({ response });
 
         router.push(`?orderId=${response.data?._id}`);
@@ -46,9 +48,9 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
   };
 
   return (
-    <div>
+    <AnimationContainer className="flex flex-col">
       <Animated as="p" className="text-[#4B5563] font-bold text-4xl">
-        Hello! Welcome To ShreeVedic 👋
+        Your Few Information 📃
       </Animated>
 
       <Animated
@@ -113,7 +115,7 @@ function Form1({ setStep, form1Data, form2Data, setForm1Data }) {
           Back to Home
         </Button>
       </Animated>
-    </div>
+    </AnimationContainer>
   );
 }
 

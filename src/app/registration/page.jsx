@@ -15,7 +15,7 @@ export default function Home() {
   console.log({ form1Data });
   return (
     <main className="relative min-h-screen gap-12 items-center justify-between p-8 md:p-24">
-      <AnimationContainer className="flex flex-col gap-20">
+      <div className="flex flex-col gap-20">
         <div className="z-10  max-w-[475px] h-full m-auto">
           {step == 1 && (
             <Form2
@@ -42,7 +42,7 @@ export default function Home() {
             Crafted with 💖 by Huge End Programmers
           </p>
         </Animated>
-      </AnimationContainer>
+      </div>
     </main>
   );
 }

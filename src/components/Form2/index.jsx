@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 
 import Calendar from "../Calendar";
 import Animated from "../Animated";
+import AnimationContainer from "../AnimationContainer";
 
 const dropDownDataClass = {
   // name: "Yoga Class",
@@ -310,7 +311,7 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
   };
 
   return (
-    <div className=" flex flex-col">
+    <AnimationContainer className=" flex flex-col">
       <Animated as="p" className="mb-6 text-[#4B5563] font-bold text-4xl">
         Class Registration 🧘‍♂️
       </Animated>
@@ -400,7 +401,7 @@ function Form2({ setStep, setForm1Data, form2Data, setForm2Data, form1Data }) {
           Go Back
         </Button>
       </Animated>
-    </div>
+    </AnimationContainer>
   );
 }
 
