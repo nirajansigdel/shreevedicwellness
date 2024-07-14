@@ -5,7 +5,7 @@ export default async function CheckoutPage({}: {
 }) {
   return (
     <div className="w-full px-5 md:px-0 md:w-4/5 mx-auto h-screen flex items-center justify-center">
-      <div className="w-full lg:w-2/5 border rounded-md p-4">
+      <div className="w-full md:w-2/5 border rounded-md p-4">
         <div className="flex items-center justify-center mb-5">
           <TbCircleCheckFilled className="text-[58px] text-primary" />
         </div>
@@ -27,7 +27,7 @@ export default async function CheckoutPage({}: {
                 shreejanauprety7@gmail.com
               </Link>
               <div className="border py-3 gap-2 rounded-md flex items-center justify-center">
-                <TbPhone /> <p>+91 123456789</p>
+                <TbPhone /> <p>+91 5714749074</p>
               </div>
             </div>
           </div>
