@@ -36,7 +36,7 @@ export default async function CheckoutPage({}: {
               href="/"
               className="text-blue-500 hover:text-blue-400 transition-colors"
             >
-              Bact To Home
+              Back To Home
             </Link>
           </div>
         </div>
