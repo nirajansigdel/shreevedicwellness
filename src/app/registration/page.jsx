@@ -34,12 +34,6 @@ export default function Home() {
           )}
           {step == 3 && <PaymentForm setStep={setStep} form1Data={form1Data} />}
         </div>
-
-        <Animated>
-          <p className="text-[#4B5563] font-medium text-md text-center ">
-            Crafted with 💖 by Huge End Programmers
-          </p>
-        </Animated>
       </div>
     </main>
   );
