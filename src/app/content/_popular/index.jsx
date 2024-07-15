@@ -13,37 +13,37 @@ function Index() {
   const data = [
     {
       id: 1,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Yoga For Beginners",
       image: Image1,
     },
     {
       id: 2,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Balance Body and Mind",
       image: Image2,
     },
     {
       id: 3,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Self confidence flow",
       image: Image3,
     },
     {
       id: 4,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Exercise for slim",
       image: Image4,
     },
     {
       id: 5,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Public Speaking",
       image: Image5,
     },
     {
       id: 6,
-      price: "$12.00",
+      price: "Starting from $10.00",
       name: "Weight Management",
       image: Image6,
     },
