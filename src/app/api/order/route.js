@@ -7,7 +7,6 @@ export async function POST(req) {
     await connectToDatabase();
     const data = await req.json();
     const order = data;
-    console.log(order);
     const newOrder = new OrderModel(order);
     const saveNewOrder = await newOrder.save();
     console.log(saveNewOrder);

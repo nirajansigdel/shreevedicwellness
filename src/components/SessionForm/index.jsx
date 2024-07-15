@@ -281,7 +281,7 @@ function SessionForm({ setStep, setForm1Data, form2Data, setForm2Data }) {
   const formValidation = () => {
     if (form2Data.class && form2Data.class_type && sessionTime) {
       setStep(2);
-    } else if (!firsSelectedValue || !secondOption || sessionTime) {
+    } else if (!firsSelectedValue || !secondOption || !sessionTime) {
       setError(true);
     }
   };

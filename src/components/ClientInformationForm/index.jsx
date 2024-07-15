@@ -10,6 +10,20 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import Animated from "../Animated";
 import AnimationContainer from "../AnimationContainer";
+import { TbCircleCheck, TbCircleCheckFilled } from "react-icons/tb";
+
+const SESSION_PRICING = [
+  {
+    id: 1,
+    name: "Group",
+    price: "12.00",
+  },
+  {
+    id: 2,
+    name: "Individual",
+    price: "25.00",
+  },
+];
 
 function ClientInformationForm({
   setStep,
@@ -20,15 +34,16 @@ function ClientInformationForm({
   const router = useRouter();
   const [error, setError] = useState(null);
 
+  const [sessionPricing, setSessionPricing] = useState(SESSION_PRICING[0]);
+
   const handleApiOrderSubmit = async () => {
     try {
       if (form1Data.client_name && form1Data.email && form1Data.country) {
         const response = await axios.post(`/api/order`, {
           ...form1Data,
           ...form2Data,
+          session_pricing: sessionPricing,
         });
-
-        console.log({ response });
 
         router.push(`?orderId=${response.data?._id}`);
         setStep(3);
@@ -41,14 +56,6 @@ function ClientInformationForm({
       }
     } catch (error) {
       toast.error("Failed to submit");
-    }
-  };
-
-  const formValidation = () => {
-    if (form2Data.class && form2Data.class_type && sessionTime) {
-      setStep(2);
-    } else if (!firsSelectedValue || !secondOption || sessionTime) {
-      setError(true);
     }
   };
 
@@ -101,6 +108,34 @@ function ClientInformationForm({
           }
         />
       </Animated>
+
+      <div>
+        <Animated as="p" className="my-2 text-secondary">
+          Session Fee
+        </Animated>
+        <Animated className="flex gap-3 mb-3">
+          {SESSION_PRICING.map((price) => (
+            <button
+              onClick={() => setSessionPricing(price)}
+              className={`border-2 ${
+                price.id === sessionPricing.id && "border-indigo-500"
+              } rounded-lg flex-1 px-3 py-3 flex justify-between items-center`}
+            >
+              <div>
+                <p className="text-xl font-bold">${price.price}</p>
+                <p className="text-start text-secondary">{price.name}</p>
+              </div>
+              <div>
+                {price.id === sessionPricing.id ? (
+                  <TbCircleCheckFilled className="text-indigo-500 text-3xl" />
+                ) : (
+                  <TbCircleCheck className="text-secondary text-3xl" />
+                )}
+              </div>
+            </button>
+          ))}
+        </Animated>
+      </div>
 
       {error && (
         <p className="text-sm text-red-600 my-5 ">

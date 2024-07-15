@@ -1,5 +1,6 @@
 import { createOrder } from "../config";
 import connectToDatabase from "../../mongodb/connect";
+import { OrderModel } from "../../mongodb/models/orderModel";
 
 export async function POST(req, res) {
   try {
@@ -9,7 +10,15 @@ export async function POST(req, res) {
     const data = await req.json();
     const { order_id } = data;
 
-    const { jsonResponse, httpStatusCode } = await createOrder(order_id);
+    const order = await OrderModel.findById(order_id);
+
+    if (!order) {
+      return Response.json({ error: "Order does not exist" }, { status: 400 });
+    }
+
+    console.log("Order found", order);
+
+    const { jsonResponse, httpStatusCode } = await createOrder(order);
 
     return Response.json(jsonResponse);
   } catch (error) {

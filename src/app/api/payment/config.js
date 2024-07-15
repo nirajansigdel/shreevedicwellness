@@ -28,11 +28,11 @@ export const generateAccessToken = async () => {
  * Create an order to start the transaction.
  * @see https://developer.paypal.com/docs/api/orders/v2/#orders_create
  */
-export const createOrder = async (order_id) => {
+export const createOrder = async (order) => {
   // use the cart information passed from the front-end to calculate the purchase unit details
   console.log(
     "shopping cart information passed from the frontend createOrder() callback:",
-    order_id
+    order._id
   );
 
   const accessToken = await generateAccessToken();
@@ -43,7 +43,7 @@ export const createOrder = async (order_id) => {
       {
         amount: {
           currency_code: "USD",
-          value: "12.00",
+          value: order.session_pricing.price,
         },
       },
     ],

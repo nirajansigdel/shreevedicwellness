@@ -1,19 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
-import Input from "../Input";
 import Button from "../Button";
 import PayPalPayment from "@/components/PayPalPayment";
 import PayPalScriptProvider from "@/components/PayPalScriptProvider";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 function PaymentForm({ setStep }) {
-  const [payment, setPayment] = useState(null);
-  const router = useRouter();
   const searchParams = useSearchParams();
   const order_id = searchParams.get("orderId");
-  console.log({ order_id });
 
   // const order_id = "654241c0ec9b24fdfc34bc8f" // ID referencing the object stored in database after submitting the form
   if (!order_id) {

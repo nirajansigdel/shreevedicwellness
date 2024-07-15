@@ -21,7 +21,6 @@ const PayPalPayment = ({ order_id }) => {
     }
   };
   const onApprove = async (data) => {
-    console.log(data);
     try {
       const res = await axios.post(`/api/payment/capture/${data.orderID}`, {
         order_id,
@@ -31,12 +30,9 @@ const PayPalPayment = ({ order_id }) => {
 
       toast.success("Payment Successful");
       router.push("/checkout/" + order_id);
-      // Navigate to success page after payment successs
-      // const url = `${window.location.protocol}//${window.location.host}/success`
 
       return res.data;
     } catch (error) {
-      console.log(error);
       if (error.response && error.response.data.error) {
         toast.error(error.response.data.error);
         return error.response.data.error;
@@ -45,16 +41,6 @@ const PayPalPayment = ({ order_id }) => {
       }
     }
   };
-
-  // if (!order_id) {
-  //   return (
-  //     <div>
-  //       <span>
-  //         <Loader />
-  //       </span>
-  //     </div>
-  //   );
-  // }
 
   if (!PayPalButtons) {
     return <div className="py-12">Loading Please Wait...</div>;

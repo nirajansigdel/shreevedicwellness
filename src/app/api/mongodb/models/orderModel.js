@@ -10,6 +10,7 @@ const orderSchema = new mongoose.Schema(
     class: { type: String },
     session_date: { type: Date },
     session_time: { type: String },
+    session_pricing: { name: { type: String }, price: { type: String } },
     payment_orderID: { type: String },
     payment_status: {
       type: String,
