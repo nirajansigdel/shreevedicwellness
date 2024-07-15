@@ -16,12 +16,12 @@ const SESSION_PRICING = [
   {
     id: 1,
     name: "Group",
-    price: "12.00",
+    price: "10.00",
   },
   {
     id: 2,
     name: "Individual",
-    price: "25.00",
+    price: "20.00",
   },
 ];
 

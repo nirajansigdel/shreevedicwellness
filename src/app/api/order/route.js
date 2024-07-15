@@ -7,6 +7,11 @@ export async function POST(req) {
     await connectToDatabase();
     const data = await req.json();
     const order = data;
+    if (order.session_pricing.name === "Group") {
+      order.session_pricing.price = "10.00";
+    } else if (order.session_pricing.name === "Individual") {
+      order.session_pricing.price = "20.00";
+    }
     const newOrder = new OrderModel(order);
     const saveNewOrder = await newOrder.save();
     console.log(saveNewOrder);
