@@ -14,7 +14,7 @@ import AnimationContainer from "@/components/AnimationContainer";
 function Content() {
   return (
     <div className="flex bg-white flex-col h-screen  w-full  ">
-      <AnimationContainer className="w-4/5  mx-auto flex flex-col flex-1">
+      <AnimationContainer className="content-container flex flex-col flex-1">
         <NavBar />
         <div className="flex flex-col gap-24">
           <Hero />

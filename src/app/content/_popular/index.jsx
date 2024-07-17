@@ -32,7 +32,7 @@ function Index() {
     {
       id: 4,
       price: "Starting from $10.00",
-      name: "Exercise for slim",
+      name: "Meditation for Mental & Emotional Detox",
       image: Image4,
     },
     {
@@ -81,7 +81,7 @@ function Index() {
                 >
                   Join Now
                 </Link>
-                <p className="text-[11px] font-medium mt-1">8 days</p>
+                {/* <p className="text-[11px] font-medium mt-1">8 days</p> */}
               </div>
             </div>
           </div>
